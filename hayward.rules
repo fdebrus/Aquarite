@@ -1,0 +1,35 @@
+rule "Hayward Light"
+when
+   Item Hayward_Light changed
+then
+   if(Hayward_Light.state == ON){
+      haywardlight_Args.sendCommand("1")
+   }else{
+      haywardlight_Args.sendCommand("0")
+   }
+end
+
+rule "Hayward Light Execution"
+when
+   Item  haywardlight_Args received command
+then
+   if (haywardlight_Run.state != ON) {
+      haywardlight_Run.sendCommand(ON)
+   }else{
+      logInfo("Hayward Light", "Script already in use, skipping execution.")
+   }
+end
+
+rule "Hayward Light Complete"
+when
+   Item haywardlight_Run changed from ON to OFF
+then
+   logInfo("Hayward Light", "Script has completed.")
+end
+
+rule " Hayward Light Results"
+when
+   Item haywardlight_Out received update
+then
+   logInfo("Hayward Light", "Raw result:" + haywardlight_Out.state )
+end

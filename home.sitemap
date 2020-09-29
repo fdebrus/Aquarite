@@ -1,0 +1,38 @@
+sitemap home label="Home" {	
+	Text label="Pool" icon="pool" {
+	        Frame label="Pool" icon="pool" {
+			Switch item=Hayward_Light	
+			Default item=Hayward_PoolTemp
+		}
+		Frame label="Filtration" icon="pool" {
+			Text item=Hayward_FiltrationStatus
+			Text item=Hayward_FiltrationMode
+		
+			Text item=Hayward_FiltrationTimeRemaining visibility=[Hayward_FiltrationMode=="INTEL"]
+
+			Text item=Hayward_FiltrationTime1 visibility=[Hayward_FiltrationMode=="AUTO"]
+			Text item=Hayward_FiltrationTime2 visibility=[Hayward_FiltrationMode=="AUTO"]
+			Text item=Hayward_FiltrationTime3 visibility=[Hayward_FiltrationMode=="AUTO"]
+
+			Text item=Hayward_FiltrationTime1 visibility=[Hayward_FiltrationMode=="HEATING"]
+			Text item=Hayward_FiltrationTime2 visibility=[Hayward_FiltrationMode=="HEATING"]
+			Text item=Hayward_FiltrationTime3 visibility=[Hayward_FiltrationMode=="HEATING"]
+
+			Text item=Hayward_FiltrationTime1 visibility=[Hayward_FiltrationMode=="SMART"]
+			Text item=Hayward_FiltrationTime2 visibility=[Hayward_FiltrationMode=="SMART"]
+			Text item=Hayward_FiltrationTime3 visibility=[Hayward_FiltrationMode=="SMART"]
+		}
+		Frame label="PH" icon="pool" {
+			Text item=Hayward_PH
+			Text item=Hayward_PHValue
+			Text item=Hayward_PHAlarm
+			Text item=Hayward_PHStatus
+		}
+		Frame label="RX" icon="pool" {
+			Text item=Hayward_RX
+			Text item=Hayward_RX1
+			Text item=Hayward_RXStatus
+		}
+	}
+}	
+

@@ -1,0 +1,20 @@
+Number:Temperature Hayward_PoolTemp	"Pool Temp [%.1f %unit%]"		<temperature>		(gHAYWARD)
+String Hayward_FiltrationStatus 	"Filtration Status [%s]"		<flow>			(gHAYWARD)
+String Hayward_FiltrationMode 		"Filtration Mode [%s]"			<flow>			(gHAYWARD)
+String Hayward_FiltrationTimeRemaining	"FiltrationTimeRemaining [%s]"  	<flow>			(gHAYWARD)
+String Hayward_FiltrationTime1		"FiltrationTime1 [%s]"  		<flow>			(gHAYWARD)
+String Hayward_FiltrationTime2		"FiltrationTime2 [%s]"  		<flow>			(gHAYWARD)
+String Hayward_FiltrationTime3		"FiltrationTime3 [%s]"  		<flow>			(gHAYWARD)
+String Hayward_PH 			"pH Current [%s]"			<water>			(gHAYWARD)
+String Hayward_PHValue	 		"pH Target [%s]"			<water>			(gHAYWARD)
+String Hayward_PHAlarm	 		"pH Alarm [%s]"				<water>			(gHAYWARD)
+String Hayward_PHStatus 		"pH Status [MAP(onoff.map):%s]"		<water>			(gHAYWARD)
+String Hayward_RX			"Rx Current [%s]"	 		<oil>			(gHAYWARD)
+String Hayward_RX1			"Rx Target [%s]"			<oil>			(gHAYWARD)
+String Hayward_RXStatus			"Chlorine Production [%s]"		<smoke>			(gHAYWARD)
+Switch Hayward_Light 			"Pool lights"				<light>			(gHAYWARD)
+
+Switch haywardlight_Run		{channel="exec:command:haywardlight:run", autoupdate="false"}
+String haywardlight_Args	{channel="exec:command:haywardlight:input"} 
+String haywardlight_Out		{channel="exec:command:haywardlight:output"}
+

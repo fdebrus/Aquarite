@@ -1,0 +1,2 @@
+Thing exec:command:haywardrefresh [command="/etc/openhab2/scripts/hayward.py -r config", interval=60, timeout=20]
+Thing exec:command:haywardlight [command="/etc/openhab2/scripts/hayward.py -l %2$s", interval=0, autorun=false]

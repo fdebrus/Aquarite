@@ -1,0 +1,6 @@
+# For security reasons all commands that are used by the exec binding or transformation need to be whitelisted.
+# Every command needs to be listed on a separate line below.
+/etc/openhab2/scripts/hayward.py -r dashboard
+/etc/openhab2/scripts/hayward.py -r config
+/etc/openhab2/scripts/hayward.py -l %2$s
+/etc/openhab2/scripts/hayward.py -p %2$s
